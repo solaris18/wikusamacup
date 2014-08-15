@@ -1,0 +1,311 @@
+@import (font.css);
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+html, body {
+	width: 100%;
+	height: 100%;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font: 16px/24px "Bebas";
+	word-spacing: 5px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Bebas";
+	word-spacing: 5px;
+}
+p {
+	font-family: "Open Sans", "Helvetica", Arial;
+	color: #727272;
+	word-spacing: 0;
+}
+.clear {
+	clear: both;
+}
+.left-box {
+	padding-right: 0;
+}
+.right-box {
+	padding-left: 0;
+}
+.pad-tb65 {
+	padding-top: 65px;
+	padding-bottom: 65px;
+}
+.pad-tb50 {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.pad-tb40 {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.pad-tb70 {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.pad-lr20 {
+	padding-left: 20px !important;
+	padding-right: 20px  !important;
+}
+.pad-trbl0 {
+	padding: 0 !important;
+}
+.mar-bot50 {
+	margin-bottom: 50px;
+}
+.margin-none{
+	margin:0;
+}
+.text-large, .text-medium, .text-micro, .text-small, .text-xlarge, .text-xsmall, .text-xxlarge {
+	line-height: normal;
+}
+.title {
+	font-family: 'Catatan Perjalanan';
+	word-spacing: normal;
+}
+.title.blue {
+	color: #319adb
+}
+.text-micro {
+	font-size: 0.7rem;
+}
+.text-xsmall {
+	font-size: 1.2rem;
+}
+.text-small {
+	font-size: 1.4rem;
+}
+.text-medium {
+	font-size: 1.8rem;
+}
+.text-large {
+	font-size: 2.2rem;
+}
+.text-xlarge {
+	font-size: 3.2rem;
+}
+.text-xxlarge {
+	font-size: 5rem;
+}
+.text-white {
+	color: #fff;
+}
+/*--- custom style ---*/
+.wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	z-index: 1;
+	overflow: visible;
+}
+.page {
+	height: 100%;
+	background: #fff;
+	position: relative;
+	overflow: hidden;
+}
+.bg-home {
+	background: #414d5b url(../img/bg-home.jpg) fixed top center no-repeat;
+	background-size: cover;
+}
+.bg-gallery{
+	background:#000 url(../img/bg-gallery.jpg)  top center repeat-y;
+	background-size: 100%;
+}
+.bg-yellow, .bg-green, .bg-blue, .bg-navy, .bg-trans-black {
+	color: #fff;
+}
+.bg-yellow {
+	background: #fcbd1d;
+}
+.bg-green {
+	background: #27ae60;
+}
+.bg-blue {
+	background: #319adb;
+}
+.bg-navy {
+	background: #2c3e50;
+}
+.bg-bluesky{
+	background: #CCFFFF;
+}
+.bg-trans-black {
+	background-color: rgba(0,0,0,.1);
+	padding: 10px;
+	margin: 0 -15px;
+	font-size: 1.3rem;
+	font-family: "Catatan Perjalanan";
+	word-spacing: 0;
+}
+.logo {
+	display: block;
+	padding: 20px;
+	background: #fff;
+	text-align: center;
+}
+.logo img {
+	height: 180px;
+}
+ul.menu {
+	background: #319adb;
+}
+ul.menu li, ul.filter li {
+	background: #319adb;
+	padding: 10px;
+	color: #fff;
+	list-style: none;
+	text-decoration: none;
+	cursor:pointer;
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	-ms-transition: 1s;
+	transition: 1s;
+}
+ul.menu li:hover {
+	background: #FBBC25;
+	text-decoration: none;
+}
+ul.menu li a {
+	color: #fff;
+	text-decoration: none;
+}
+ul.menu li a:hover {
+	text-decoration: none !important;
+}
+#livescore span {
+	float: right;
+	color: #2c3e50
+}
+select.pickcity {
+	background: #27ae60;
+	color: #fff;
+	border: none;
+}
+select.pickcity option {
+	padding: 10px;
+}
+.battle {
+	z-index: 2;
+	position: absolute;
+	text-align: center;
+	top: 145px;
+}
+.battle img {
+	height: 280px;
+}
+section {
+	color: rgba(0,0,0,0.45);
+	font-size: 80%;
+	line-height: 1.25;
+	font-family: 'Lato', Arial, sans-serif;
+}
+.progress {
+	margin-bottom: 0
+}
+.btn-sponsor {
+	width: 100%;
+	background: #319adb;
+	padding: 10px;
+	color: #fff;
+	border: none;
+	border-bottom: 5px #2a8ac5 solid;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
+}
+.btn-sponsor:hover {
+	background: #fcbd1d;
+	border-bottom: solid 5px #e6ac17;
+}
+ul.filter{margin:30px 0; text-align:center}
+ul.filter li{
+	display:inline;
+}
+ul.filter li:hover, ul.filter li.active{
+	background:#fcbd1d;
+}
+footer{
+	background:#2c3e50 url(../img/top-border.png) top left repeat-x;
+}
+
+
+/* ------------- RESPONSIVE  ----------- */
+@media (max-width: 767px) {
+.container {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.left-box, .right-box {
+	padding: 0
+}
+html {
+	font-size: 80%
+}
+.bg-home {
+	background: none;
+	height: auto !important;
+}
+#home {
+	padding: 0 !important;
+	height: auto !important;
+}
+.battle {
+	position: relative;
+	top: 0;
+}
+.battle img {
+	width: 100%;
+	height: auto;
+}
+.box-center {
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+p.text-xsmall {
+	font-size: 1.5rem;
+}
+section {
+	font-size: 100%;
+}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+.container {
+	width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+}
+.bg-home {
+	background: none;
+	height: auto !important;
+}
+.left-box, .right-box {
+	padding: 0
+}
+#home {
+	padding: 0 !important;
+	height: auto !important;
+}
+.battle {
+	top: -37px;
+	;
+}
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+.battle {
+	top: 169px;
+}
+}
+@media (min-width: 1200px) {
+}
