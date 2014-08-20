@@ -137,7 +137,7 @@ p {
 	background: #319adb;
 }
 .bg-navy {
-	background: #2c3e50;
+	background: #272d35;
 }
 .bg-bluesky{
 	background: #CCFFFF;
@@ -149,6 +149,9 @@ p {
 	word-spacing: 0;
 	height: 50px;
 	padding: 16px 0px 0px 20px;
+}
+.bg-navy img {
+	width: 150px;
 }
 .logo {
 	display: block;
@@ -243,6 +246,9 @@ section {
 	}
 	.logo {
 		padding: 34px;
+	}
+	.bg-navy .container .col-md-12 .title.text-xlarge {
+		height: 42px;
 	}
 }
 .progress {
@@ -356,6 +362,9 @@ section {
 @media (min-width: 992px) and (max-width: 1199px) {
 .battle {
 	top: 169px;
+}
+.bg-navy img {
+	width: 100%;
 }
 }
 @media (min-width: 1200px) {
