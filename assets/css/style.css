@@ -161,6 +161,7 @@ p {
 }
 ul.menu {
 	background: #319adb;
+	margin: 0px;
 }
 ul.menu li, ul.filter li {
 	background: #319adb;

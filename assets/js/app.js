@@ -1,9 +1,13 @@
-$( document ).ready(function() {
-			window_height = $(window).height();
-			$(".bg-home").css('height', window_height);
-			$('#home').css({'height':window_height, "padding-top":(window_height-484)/2});
-		});
-		;
+$(document).ready(function() {
+    var windowHeight = $(window).height();
+    var homeShouldHeight = $('#home div:eq(0)').height();
+
+    $('.bg-home').css('height', windowHeight);
+    $('#home').css({
+        'height' : windowHeight, 
+        'padding-top' : (windowHeight - homeShouldHeight) / 2
+    });
+});
 
 // Minimal Form
 var theForm = document.getElementById( 'theForm' );
