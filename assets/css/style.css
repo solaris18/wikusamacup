@@ -1,4 +1,3 @@
-@import (font.css);
 html {
 	font-size: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -34,9 +33,9 @@ p {
 .right-box {
 	padding-left: 0;
 }
-.pad-tb65 {
-	padding-top: 65px;
-	padding-bottom: 65px;
+.pad-tb80 {
+	padding-top: 80px;
+	padding-bottom: 80px;
 }
 .pad-tb50 {
 	padding-top: 50px;
@@ -50,12 +49,17 @@ p {
 	padding-top: 70px;
 	padding-bottom: 70px;
 }
+.pad-tb29 {
+	padding-top: 29px;
+	padding-bottom: 29px;
+}
 .pad-lr20 {
 	padding-left: 20px !important;
 	padding-right: 20px  !important;
 }
 .pad-trbl0 {
-	padding: 0 !important;
+	padding-left: 0 !important;
+	padding-top: 0 !important;
 }
 .mar-bot50 {
 	margin-bottom: 50px;
@@ -77,22 +81,22 @@ p {
 	font-size: 0.7rem;
 }
 .text-xsmall {
-	font-size: 1.2rem;
+	font-size: 1.3rem;
 }
 .text-small {
-	font-size: 1.4rem;
+	font-size: 1.5rem;
 }
 .text-medium {
-	font-size: 1.8rem;
+	font-size: 1.6rem;
 }
 .text-large {
 	font-size: 2.2rem;
 }
 .text-xlarge {
-	font-size: 3.2rem;
+	font-size: 3.0rem;
 }
 .text-xxlarge {
-	font-size: 5rem;
+	font-size: 4.5rem;
 }
 .text-white {
 	color: #fff;
@@ -133,22 +137,25 @@ p {
 	background: #319adb;
 }
 .bg-navy {
-	background: #2c3e50;
+	background: #272d35;
 }
 .bg-bluesky{
 	background: #CCFFFF;
 }
 .bg-trans-black {
 	background-color: rgba(0,0,0,.1);
-	padding: 10px;
 	margin: 0 -15px;
-	font-size: 1.3rem;
 	font-family: "Catatan Perjalanan";
 	word-spacing: 0;
+	height: 50px;
+	padding: 16px 0px 0px 20px;
+}
+.bg-navy img {
+	width: 150px;
 }
 .logo {
 	display: block;
-	padding: 20px;
+	padding: 33px;
 	background: #fff;
 	text-align: center;
 }
@@ -157,18 +164,19 @@ p {
 }
 ul.menu {
 	background: #319adb;
+	margin: 0px;
 }
 ul.menu li, ul.filter li {
 	background: #319adb;
-	padding: 10px;
+	padding: 13px;
 	color: #fff;
 	list-style: none;
 	text-decoration: none;
 	cursor:pointer;
-	-webkit-transition: 1s;
-	-moz-transition: 1s;
-	-ms-transition: 1s;
-	transition: 1s;
+	-webkit-transition: .5s;
+	-moz-transition: .5s;
+	-ms-transition: .5s;
+	transition: .5s;
 }
 ul.menu li:hover {
 	background: #FBBC25;
@@ -183,12 +191,18 @@ ul.menu li a:hover {
 }
 #livescore span {
 	float: right;
-	color: #2c3e50
+	color: #2c3e50;
+	margin-top: -17px;
 }
 select.pickcity {
 	background: #27ae60;
 	color: #fff;
 	border: none;
+	height: inherit;
+	width: 133px;
+	padding-left: 19px;
+	-webkit-appearance: none;
+	-webkit-border-radius: 0px;
 }
 select.pickcity option {
 	padding: 10px;
@@ -207,6 +221,35 @@ section {
 	font-size: 80%;
 	line-height: 1.25;
 	font-family: 'Lato', Arial, sans-serif;
+}
+.pad-tb29.pad-lr20 .text-xxlarge {
+	padding: 8px 0px 18px;
+}
+@-moz-document url-prefix() {
+    .pad-tb29.pad-lr20 .title {
+		height: 22px;
+	}
+	.pad-tb80.pad-lr20 .title.text-small {
+		height: 23px;
+	}
+	.pad-tb29.pad-lr20 .text-xxlarge {
+		padding: 13px 0px 13px;
+	}
+	.col-md-12.col-sm-12.col-xs-6.bg-navy .pad-tb80.pad-lr20 {
+		padding-bottom: 79px;
+	}
+	.bg-trans-black {
+		padding: 14px 0px 0px 20px;
+	}
+	.pickcity {
+	    padding-top: 2px;
+	}
+	.logo {
+		padding: 34px;
+	}
+	.bg-navy .container .col-md-12 .title.text-xlarge {
+		height: 42px;
+	}
 }
 .progress {
 	margin-bottom: 0
@@ -273,11 +316,26 @@ html {
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
-p.text-xsmall {
-	font-size: 1.5rem;
-}
 section {
 	font-size: 100%;
+}
+.pad-tb29.pad-lr20 {
+	padding-top: 37px;
+	padding-bottom: 38px;
+}
+.bg-trans-black {
+	padding: 19px 0px 0px 20px;
+}
+.bg-trans-black.visible-xs {
+	padding: 14px 0px 0px 20px;
+}
+@-moz-document url-prefix() {
+	.col-md-12.col-sm-12.col-xs-6.bg-navy .pad-tb80.pad-lr20 {
+		padding-bottom: 83px;
+	}
+	.bg-trans-black {
+		padding: 17px 0px 0px 20px;
+	}
 }
 }
 @media (min-width: 768px) and (max-width: 991px) {
@@ -299,12 +357,14 @@ section {
 }
 .battle {
 	top: -37px;
-	;
 }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
 .battle {
 	top: 169px;
+}
+.bg-navy img {
+	width: 100%;
 }
 }
 @media (min-width: 1200px) {
