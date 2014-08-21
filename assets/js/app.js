@@ -8,6 +8,7 @@ function renderCollage($collage) {
 }
 
 $(document).ready(function() {
+    var apiUrl = 'http://wikusamacup.local';
     var windowHeight = $(window).height();
     var homeShouldHeight = $('#home div:eq(0)').height();
     var resizeTimer = null;
@@ -33,11 +34,23 @@ $(document).ready(function() {
     (function(form) {
         new stepsForm(form, {
             onSubmit: function(form) {
-                classie.addClass(form.querySelector('.simform-inner'), 'hide');
-                var messageEl = form.querySelector('.final-message');
+                // alert(form.serialize());
+                $.ajax({
+                    url: apiUrl + "/registration",
+                    type: "post",
+                    data: $(form).serialize(),
+                    success: function( result ){
+                      if ( ! result.error ) {
+                        classie.addClass(form.querySelector('.simform-inner'), 'hide');
+                        var messageEl = form.querySelector('.final-message');
+                        messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+                        classie.addClass( messageEl, 'show' );
+                      }else{
+                        alert('Something problem please try again!');
+                      };
+                    }
+                });
 
-                messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
-                classie.addClass( messageEl, 'show' );
             }
         });
     } ($('#theForm').get(0)));
