@@ -188,6 +188,25 @@ ul.menu a {
 ul.menu a li:hover {
 	background: #FBBC25;
 }
+
+/*Filter tab*/
+ul.filter.nav-tabs{
+	border-bottom: none;
+}
+
+ul.filter.nav-tabs li{
+	float: none;
+	margin: 0 2px;
+	display: inline-block;
+}
+ul.filter.nav-tabs li a,
+ul.filter.nav-tabs li a:hover{
+	color: #FFF;
+	border:none;
+	padding: 0px;
+	background: none;
+}
+
 #livescore span {
 	float: right;
 	color: #2c3e50;
