@@ -70,5 +70,10 @@ $(window).load(function() {
     var $collage = $('.Collage');
 
     renderCollage($collage)
-    $collage.collageCaption();
+    // $collage.collageCaption();
+
+
+    // fancybox
+    $(".fancybox").fancybox(
+    );
 });
