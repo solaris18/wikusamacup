@@ -17,6 +17,9 @@
 		<link href="assets/css/font.css" rel="stylesheet" type="text/css">
 		<link href="assets/css/style.css" rel="stylesheet" type="text/css">
 
+		<!-- FullscreenOverlay -->
+		<link rel="stylesheet" type="text/css" href="plugins/FullscreenOverlayStyles/css/style3.css" />
+		
 		<!-- Minimal Form -->
 		<link rel="stylesheet" type="text/css" href="plugins/MinimalForm/MinimalForm/css/normalize.css"/>
 		<link rel="stylesheet" type="text/css" href="plugins/MinimalForm/MinimalForm/css/component.css"/>
@@ -29,6 +32,8 @@
 		<!-- FancyBox -->
 		<link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 
+		
+
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
 			<script src="plugins/bootstrap/js/html5shiv.js"></script>
@@ -38,6 +43,9 @@
 	<body>
 		<!-- wrapper full -->
 		<div class="wrapper">
+			<div class="btn-menu-box">
+				<a id="trigger-overlay" href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
+			</div>
 			<div class="bg-home">
 				<div class="container" id="home">
 					<!-- sidemenu -->
@@ -297,7 +305,7 @@
 					</ul>
 
 					<!-- Tab panes -->
-					<div class="tab-content">
+					 <div class="tab-content">
 						<div class="tab-pane active" id="2012">
 							<section class="Collage effect-parent">
 								<div class="Image_Wrapper">
@@ -484,7 +492,7 @@
 							</section>
 						</div>
 					</div>
-				</div>
+				</div> 
 			</div>
 			<!-- /gallery -->
 			<!-- schedule -->
@@ -545,6 +553,34 @@
 		</div>
 		<!-- / wrapper full -->
 
+		<!-- Start : div FullscreenOverlay -->
+		<div class="overlay overlay-slidedown">
+			<button type="button" class="overlay-close">Close</button>
+			<nav>
+				<ul>
+					<a class="overlay-about" href="#about">
+						<li><span class="glyphicon glyphicon-question-sign"></span> About Wikucup </li>
+					</a>
+					<a class="overlay-register" href="#register">
+						<li><span class="glyphicon glyphicon-question-sign"></span> Registration </li>
+					</a>
+					<a class="overlay-sponsor" href="#sponsor">
+						<li><span class="glyphicon glyphicon-question-sign"></span> Sponsorship </li>
+					</a>
+					<a class="overlay-gallery" href="#gallery">
+						<li><span class="glyphicon glyphicon-question-sign"></span> Gallery </li>
+					</a>
+					<a class="overlay-schedule" href="#schedule">
+						<li><span class="glyphicon glyphicon-question-sign"></span> Schedule & Scoring </li>
+					</a>
+					<a class="overlay-contact" href="#contact">
+						<li><span class="glyphicon glyphicon-question-sign"></span> Contact </li>
+					</a>
+				</ul>
+			</nav>
+		</div>
+		<!--  End : div FullscreenOverlay-->
+
 		<script type="text/javascript" src="assets/js/jquery.js"></script>
 
 		<!-- Bootstrap -->
@@ -554,6 +590,9 @@
 		<script src="plugins/MinimalForm/MinimalForm/js/classie.js"></script>
 		<script src="plugins/MinimalForm/MinimalForm/js/stepsForm.js"></script>
 
+		<!-- FullscreenOverlayStyles -->
+		<script src="plugins/FullscreenOverlayStyles/js/demo1.js"></script>
+
 		<!-- COLLAGE PHOTO -->
 		<script src="plugins/collage/jquery.collagePlus.js"></script>
 		<script src="plugins/collage/extras/jquery.removeWhitespace.js"></script>
@@ -561,6 +600,8 @@
 
 		<!-- FancyBox -->
 		<script type="text/javascript" src="plugins/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+		
 
 		<script type="text/javascript" src="assets/js/app.js"></script>
 	</body>
