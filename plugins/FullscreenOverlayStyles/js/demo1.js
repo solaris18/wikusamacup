@@ -11,6 +11,13 @@
 		},
 		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
 		support = { transitions : Modernizr.csstransitions };
+	var linkAbout = document.querySelector('.overlay-about');
+	var linkRegister = document.querySelector('.overlay-register');
+	var linkSponsor = document.querySelector('.overlay-sponsor');
+	var linkGallery = document.querySelector('.overlay-gallery'); 
+	var linkSchedule = document.querySelector('.overlay-schedule'); 
+	var linkContact = document.querySelector('.overlay-contact'); 
+
 
 	function toggleOverlay() {
 		if( classie.has( overlay, 'open' ) ) {
@@ -35,6 +42,21 @@
 		}
 	}
 
-	triggerBttn.addEventListener( 'click', toggleOverlay );
-	closeBttn.addEventListener( 'click', toggleOverlay );
+	triggerBttn.addEventListener( 'click', function(e){
+		e.preventDefault();
+		toggleOverlay();
+	});
+
+	linkAbout.addEventListener('click', toggleOverlay);
+	linkRegister.addEventListener('click', toggleOverlay);
+	linkSponsor.addEventListener('click', toggleOverlay);
+	linkGallery.addEventListener('click', toggleOverlay);
+	linkSchedule.addEventListener('click', toggleOverlay);
+	linkContact.addEventListener('click', toggleOverlay);
+
+
+	closeBttn.addEventListener( 'click', function(e){
+		e.preventDefault();
+		toggleOverlay();
+	});
 })();
