@@ -207,6 +207,13 @@ ul.filter.nav-tabs li a:hover{
 	background: none;
 }
 
+.tab-content .schedule {
+	width: 365px; 
+	height: 435px;
+	display: inline-block;
+	margin: 0px 5px 15px;
+}
+
 #livescore span {
 	float: right;
 	color: #2c3e50;
@@ -480,4 +487,13 @@ section {
 	padding: 14px 0px 14px;
 }
 @media (min-width: 1200px) {
+}
+
+/** jQuery liveScore hack */
+.ls-container .ls-content .ls-row .ls-row-date {
+	top: -2px;
+}
+
+.ls-container .ls-content .ls-row .ls-row-queue {
+	padding: 2px;
 }
