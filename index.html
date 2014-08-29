@@ -612,27 +612,30 @@
 
 		<script type="text/javascript">
 			$(function () {
+				var schedulesColor = ['#e1735e', '#45db9b', '#8d39ad'];
+				var data = [{
+					players: ['XIX Family', 'Syndicate 15'],
+					time: ['18/10/13', '08.30'],
+					currentScore: [3, 2]
+				}, {
+					players: ['SPBU 17', 'Solaris 18'],
+					time: ['18/10/13', '09.00'],
+					currentScore: [0, 0]
+				}, {
+					players: ['XIX Family', 'Syndicate 15'],
+					time: ['18/10/13', '08.30'],
+					currentScore: [3, 2]
+				}, {
+					players: ['SPBU 17', 'Solaris 18'],
+					time: ['18/10/13', '09.00'],
+					currentScore: [0, 0]
+				}];
+				
 				$('#jakarta').children().each(function (i, e) {
 					$(e).liveScore({
 						title: $(e).attr('data-title'),
-						data: [{
-							players: ['XIX Family', 'Syndicate 15'],
-							time: ['18/10/13', '08.30'],
-							currentScore: [3, 2]
-						}, {
-							players: ['SPBU 17', 'Solaris 18'],
-							time: ['18/10/13', '09.00'],
-							currentScore: [0, 0]
-						}, {
-							players: ['XIX Family', 'Syndicate 15'],
-							time: ['18/10/13', '08.30'],
-							currentScore: [3, 2]
-						}, {
-							players: ['SPBU 17', 'Solaris 18'],
-							time: ['18/10/13', '09.00'],
-							currentScore: [0, 0]
-						}]
-					});
+						data: data
+					}).find('.ls-header').css('background-color', schedulesColor[i]);
 				});
 			});
 		</script>
