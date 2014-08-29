@@ -5,7 +5,8 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(153,204,51,0.9);
+	background: rgba(49, 154, 219,0.9);
+	z-index: 1;
 }
 
 /* Overlay closing cross */
@@ -48,6 +49,7 @@
 	height: 20%;
 	height: calc(100% / 5);
 	min-height: 54px;
+	color: #fff;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
@@ -56,11 +58,12 @@
 	font-size: 54px;
 	font-weight: 300;
 	display: block;
-	color: #fff;
 	-webkit-transition: color 0.2s;
 	transition: color 0.2s;
 }
-
+.overlay ul a:hover{
+	text-decoration: none !important;
+}
 .overlay ul li a:hover,
 .overlay ul li a:focus {
 	color: #e3fcb1;
@@ -73,6 +76,7 @@
 	transform: translateY(-100%);
 	-webkit-transition: -webkit-transform 0.4s ease-in-out, visibility 0s 0.4s;
 	transition: transform 0.4s ease-in-out, visibility 0s 0.4s;
+
 }
 
 .overlay-slidedown.open {

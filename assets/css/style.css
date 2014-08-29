@@ -346,6 +346,28 @@ footer .col-md-3 p {
 	margin-bottom: 0px;
 }
 
+.btn-menu-box{
+	position:fixed;
+	width:50px;
+	top:0;
+	right:0;
+	background:#272D35;
+	padding:15px;
+}
+.btn-menu-box span{
+	font-size: 22px;
+	color: #FFF;
+}
+
+/** jQuery liveScore hack */
+.ls-container .ls-content .ls-row .ls-row-date {
+	top: -2px !important;
+}
+
+.ls-container .ls-content .ls-row .ls-row-queue {
+	padding: 2px !important;
+}
+
 
 /* ------------- RESPONSIVE  ----------- */
 @media (max-width: 767px) {
@@ -487,13 +509,4 @@ section {
 	padding: 14px 0px 14px;
 }
 @media (min-width: 1200px) {
-}
-
-/** jQuery liveScore hack */
-.ls-container .ls-content .ls-row .ls-row-date {
-	top: -2px;
-}
-
-.ls-container .ls-content .ls-row .ls-row-queue {
-	padding: 2px;
 }
