@@ -14,6 +14,7 @@ $(document).ready(function() {
     var resizeTimer = null;
     var $collage = $('.Collage');
 
+    $('.btn-menu-box').hide()
     $('.bg-home').css('height', windowHeight);
     $('#home').css({
         'height' : windowHeight, 
@@ -76,4 +77,12 @@ $(window).load(function() {
     // fancybox
     $(".fancybox").fancybox(
     );
+});
+
+$(window).scroll(function() {
+    if ($('.btn-menu-box').offset().top > 600) {
+        $('.btn-menu-box').fadeIn();
+    } else {
+        $('.btn-menu-box').fadeOut();
+    }
 });
