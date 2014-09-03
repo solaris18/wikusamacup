@@ -56,6 +56,34 @@ $(document).ready(function() {
         });
     } ($('#theForm').get(0)));
 
+    (function () {
+        var schedulesColor = ['#e1735e', '#45db9b', '#8d39ad'];
+        var data = [{
+            players: ['XIX Family', 'Syndicate 15'],
+            time: ['18/10/13', '08.30'],
+            currentScore: [3, 2]
+        }, {
+            players: ['SPBU 17', 'Solaris 18'],
+            time: ['18/10/13', '09.00'],
+            currentScore: [0, 0]
+        }, {
+            players: ['XIX Family', 'Syndicate 15'],
+            time: ['18/10/13', '08.30'],
+            currentScore: [3, 2]
+        }, {
+            players: ['SPBU 17', 'Solaris 18'],
+            time: ['18/10/13', '09.00'],
+            currentScore: [0, 0]
+        }];
+        
+        $('#jakarta').children().each(function (i, e) {
+            $(e).liveScore({
+                title: $(e).attr('data-title'),
+                data: data
+            }).find('.ls-header').css('background-color', schedulesColor[i]);
+        });
+    }());
+
     $(window).bind('resize', function() {
         $collage.find('.Image_Wrapper').css("opacity", 0);
         
@@ -67,17 +95,17 @@ $(document).ready(function() {
     });
 });
 
-$(window).load(function() {
-    var $collage = $('.Collage');
+// $(window).load(function() {
+//     var $collage = $('.Collage');
 
-    renderCollage($collage)
-    // $collage.collageCaption();
+//     renderCollage($collage)
+//     // $collage.collageCaption();
 
 
-    // fancybox
-    $(".fancybox").fancybox(
-    );
-});
+//     // fancybox
+//     $(".fancybox").fancybox(
+//     );
+// });
 
 $(window).scroll(function() {
     if ($('.btn-menu-box').offset().top > 600) {

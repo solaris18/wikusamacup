@@ -309,7 +309,7 @@
 					 <div class="tab-content">
 						<div class="tab-pane active" id="2012">
 							<section class="Collage effect-parent">
-								<div class="Image_Wrapper">
+								<!-- <div class="Image_Wrapper">
 									<a href="https://lh6.googleusercontent.com/-oyrU8jbKdpU/UjajP2bUrmI/AAAAAAAAHHM/uhrsA1de7fc/w1774-h1180-no/_DSC6698-SMILE.jpg" class="fancybox" rel="gallery2012">
 										<img src="https://lh6.googleusercontent.com/-oyrU8jbKdpU/UjajP2bUrmI/AAAAAAAAHHM/uhrsA1de7fc/w1774-h1180-no/_DSC6698-SMILE.jpg"></a>
 								</div>
@@ -455,12 +455,13 @@
 									<a href="https://lh3.googleusercontent.com/-YuvHdcZMlpE/UjaiuNt4n3I/AAAAAAAAEwc/vKmMuRPQltU/w1774-h1180-no/_DSC6836.JPG" class="fancybox" rel="gallery2012">
 										<img src="https://lh3.googleusercontent.com/-YuvHdcZMlpE/UjaiuNt4n3I/AAAAAAAAEwc/vKmMuRPQltU/w1774-h1180-no/_DSC6836.JPG">
 									</a>
-								</div>
+								</div> -->
 							</section>
 						</div>
 						<div class="tab-pane active" id="2013">
 							<section class="Collage effect-parent">
-								<div class="Image_Wrapper"><a><img src="https://farm4.staticflickr.com/3800/10958446204_864f98e676_o_d.jpg"></a>
+								<!-- <div class="Image_Wrapper">
+									<a><img src="https://farm4.staticflickr.com/3800/10958446204_864f98e676_o_d.jpg"></a>
 								</div>
 								<div class="Image_Wrapper">
 									<a><img src="https://farm6.staticflickr.com/5495/10958501363_fac07bbc78_o_d.jpg"></a>
@@ -488,7 +489,7 @@
 								</div>
 								<div class="Image_Wrapper">
 									<a><img src="https://farm4.staticflickr.com/3677/10958242305_7cd224b28d_o_d.jpg"></a>
-								</div>
+								</div> -->
 								
 							</section>
 						</div>
@@ -604,40 +605,10 @@
 		<!-- FancyBox -->
 		<script type="text/javascript" src="plugins/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-		<!-- app -->
-		<script type="text/javascript" src="assets/js/app.js"></script>
-
 		<!-- LiveScore -->
 		<script src="plugins/live-score/liveScore.js"></script>
 
-		<script type="text/javascript">
-			$(function () {
-				var schedulesColor = ['#e1735e', '#45db9b', '#8d39ad'];
-				var data = [{
-					players: ['XIX Family', 'Syndicate 15'],
-					time: ['18/10/13', '08.30'],
-					currentScore: [3, 2]
-				}, {
-					players: ['SPBU 17', 'Solaris 18'],
-					time: ['18/10/13', '09.00'],
-					currentScore: [0, 0]
-				}, {
-					players: ['XIX Family', 'Syndicate 15'],
-					time: ['18/10/13', '08.30'],
-					currentScore: [3, 2]
-				}, {
-					players: ['SPBU 17', 'Solaris 18'],
-					time: ['18/10/13', '09.00'],
-					currentScore: [0, 0]
-				}];
-				
-				$('#jakarta').children().each(function (i, e) {
-					$(e).liveScore({
-						title: $(e).attr('data-title'),
-						data: data
-					}).find('.ls-header').css('background-color', schedulesColor[i]);
-				});
-			});
-		</script>
+		<!-- app -->
+		<script type="text/javascript" src="assets/js/app.js"></script>
 	</body>
 </html>
