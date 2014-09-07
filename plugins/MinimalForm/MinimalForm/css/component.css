@@ -158,12 +158,11 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	content: "\e600";
+	content: "\00BB";
 	text-transform: none;
 	font-weight: normal;
 	font-style: normal;
 	font-variant: normal;
-	font-family: 'icomoon';
 	line-height: 2;
 	speak: none;
 	-webkit-font-smoothing: antialiased;
