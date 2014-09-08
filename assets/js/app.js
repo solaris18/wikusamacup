@@ -68,40 +68,49 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
-    $('#schedule .tab-content').children().each(function (i, e) {
-        $(e).children().each(function (j, f) {
-            var url = 'http://wikucupapi.agunghari.com/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
+    function render() {
+        $('#schedule .tab-content').children().each(function (i, e) {
+            $(e).children().each(function (j, f) {
+                var url = 'http://wikucupapi.agunghari.com/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
 
-            $.get(url, function(res) {
-                var key, isError, data;
+                $.get(url, function(res) {
+                    var key, isError, data;
 
-                isError = res.error;
-                data = [];
+                    isError = res.error;
+                    data = [];
 
-                for (key in res) {
-                    if (key === 'error') {
-                        continue;
+                    for (key in res) {
+                        if (key === 'error') {
+                            continue;
+                        }
+
+                        if (res.hasOwnProperty(key)) {
+                            data.push({
+                                players: res[key].player,
+                                time: [
+                                    res[key].time[0].replace(/ /g, '/'),
+                                    res[key].time[1]
+                                ],
+                                currentScore: res[key].currentScore
+                            });
+                        }
                     }
 
-                    if (res.hasOwnProperty(key)) {
-                        data.push({
-                            players: res[key].player,
-                            time: [
-                                res[key].time[0].replace(/ /g, '/'),
-                                res[key].time[1]
-                            ],
-                            currentScore: res[key].currentScore
-                        });
-                    }
-                }
-
-                $(f).liveScore({
-                    title: $(f).attr('data-city'),
-                    data: data
-                }).find('.ls-header').css('background-color', $(f).attr('data-color'));
+                    $(f).html('');
+                    $(f).liveScore({
+                        title: $(f).attr('data-city'),
+                        data: data
+                    }).find('.ls-header').css('background-color', $(f).attr('data-color'));
+                });
             });
         });
-    });
+    }
+
+    render();
+
+    setInterval(function () {
+        render();
+    }, 1000 * 60);
 });
 
 $(window).load(function() {
