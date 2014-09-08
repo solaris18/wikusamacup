@@ -100,7 +100,8 @@ $(window).load(function() {
                     $(f).liveScore({
                         title: $(f).attr('data-city'),
                         data: data
-                    }).find('.ls-header').css('background-color', $(f).attr('data-color'));
+                    });
+                    $(f).find('.ls-header').css('background-color', $(f).attr('data-color'));
                 });
             });
         });
