@@ -56,34 +56,6 @@ $(document).ready(function() {
         });
     } ($('#theForm').get(0)));
 
-    (function () {
-        var schedulesColor = ['#e1735e', '#45db9b', '#8d39ad'];
-        var data = [{
-            players: ['XIX Family', 'Syndicate 15'],
-            time: ['18/10/13', '08.30'],
-            currentScore: [3, 2]
-        }, {
-            players: ['SPBU 17', 'Solaris 18'],
-            time: ['18/10/13', '09.00'],
-            currentScore: [0, 0]
-        }, {
-            players: ['XIX Family', 'Syndicate 15'],
-            time: ['18/10/13', '08.30'],
-            currentScore: [3, 2]
-        }, {
-            players: ['SPBU 17', 'Solaris 18'],
-            time: ['18/10/13', '09.00'],
-            currentScore: [0, 0]
-        }];
-        
-        $('#jakarta').children().each(function (i, e) {
-            $(e).liveScore({
-                title: $(e).attr('data-title'),
-                data: data
-            }).find('.ls-header').css('background-color', schedulesColor[i]);
-        });
-    }());
-
     $(window).bind('resize', function() {
         $collage.find('.Image_Wrapper').css("opacity", 0);
         
@@ -92,6 +64,43 @@ $(document).ready(function() {
         resizeTimer = setTimeout(function() {
             renderCollage($collage);
         }, 200);
+    });
+});
+
+$(window).load(function() {
+    $('#schedule .tab-content').children().each(function (i, e) {
+        $(e).children().each(function (j, f) {
+            var url = 'http://wikucupapi.agunghari.com/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
+
+            $.get(url, function(res) {
+                var key, isError, data;
+
+                isError = res.error;
+                data = [];
+
+                for (key in res) {
+                    if (key === 'error') {
+                        continue;
+                    }
+
+                    if (res.hasOwnProperty(key)) {
+                        data.push({
+                            players: res[key].player,
+                            time: [
+                                res[key].time[0].replace(/ /g, '/'),
+                                res[key].time[1]
+                            ],
+                            currentScore: res[key].currentScore
+                        });
+                    }
+                }
+
+                $(f).liveScore({
+                    title: $(f).attr('data-city'),
+                    data: data
+                }).find('.ls-header').css('background-color', $(f).attr('data-color'));
+            });
+        });
     });
 });
 
