@@ -104,17 +104,17 @@ $(window).load(function() {
     });
 });
 
-// $(window).load(function() {
-//     var $collage = $('.Collage');
+$(window).load(function() {
+    var $collage = $('.Collage');
 
-//     renderCollage($collage)
-//     // $collage.collageCaption();
+    renderCollage($collage)
+    // $collage.collageCaption();
 
 
-//     // fancybox
-//     $(".fancybox").fancybox(
-//     );
-// });
+    // fancybox
+    $(".fancybox").fancybox(
+    );
+});
 
 $(window).scroll(function() {
     if ($('.btn-menu-box').offset().top > 600) {
