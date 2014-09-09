@@ -122,8 +122,14 @@ $(window).load(function() {
 
 
     // fancybox
-    $(".fancybox").fancybox(
-    );
+    $(".fancybox").fancybox({
+        padding: 0,
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
 });
 
 $(window).scroll(function() {
