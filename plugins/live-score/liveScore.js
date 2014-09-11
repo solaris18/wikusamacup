@@ -84,6 +84,13 @@ jQuery.fn.liveScore = function (config) {
       $twitter = jQuery('<button />');
       $twitter.addClass('ls-row-twitter');
       $twitter.appendTo($row);
+      $twitter.attr('data-text', (function () {
+        var d = config.data[i];
+        var text = '#Wikusamacup #{what} #{city} Match: ' + d.players[0] + ' vs. ' + d.players[1] + ' | ';
+        text = text + 'Current score: ' + d.currentScore[0] + '-' + d.currentScore[1];
+
+        return text;
+      }()));
 
       $('<i />').addClass('fa fa-twitter').appendTo($twitter);
 
@@ -93,10 +100,45 @@ jQuery.fn.liveScore = function (config) {
 
       rows.push($row);
     }
+
+    if (config.data.length == 0) {
+      $row = jQuery('<div />');
+      $row.addClass('ls-row');
+      $row.addClass('ls-row-last');
+      $row.addClass('ls-row-empty');
+      $row.html('no match');
+      $row.appendTo($content);
+    }
+  }
+
+  function registerListener() {
+    $this.on('click', '.ls-row-twitter', function (e) {
+      var city = $(this).closest('.tab-pane').attr('id');
+      var what = $(this).closest('.ls-container').attr('data-city');
+      var text = $(this).attr('data-text');
+      text = text.replace('{city}', city);
+      text = text.replace('{what}', what);
+
+      var width  = 575,
+          height = 400,
+          left   = ($(window).width()  - width)  / 2,
+          top    = ($(window).height() - height) / 2,
+          url    = 'http://twitter.com/share?text=' + encodeURIComponent(text),
+          opts   = 'status=1' +
+                   ',width='  + width  +
+                   ',height=' + height +
+                   ',top='    + top    +
+                   ',left='   + left;
+      
+      window.open(url, 'twitter', opts);
+
+      return false;
+    });
   }
 
   renderLayout();
   renderContent();
+  registerListener();
 
   return this;
 }

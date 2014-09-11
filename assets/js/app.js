@@ -68,6 +68,53 @@ $(document).ready(function() {
 });
 
 $(window).load(function() {
+    function render() {
+        $('#schedule .tab-content').children().each(function (i, e) {
+            $(e).children().each(function (j, f) {
+                var url = 'http://wikucupapi.agunghari.com/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
+
+                $.get(url, function(res) {
+                    var key, isError, data;
+
+                    isError = res.error;
+                    data = [];
+
+                    for (key in res) {
+                        if (key === 'error') {
+                            continue;
+                        }
+
+                        if (res.hasOwnProperty(key)) {
+                            data.push({
+                                players: res[key].player,
+                                time: [
+                                    res[key].time[0].replace(/ /g, '/'),
+                                    res[key].time[1]
+                                ],
+                                currentScore: res[key].currentScore
+                            });
+                        }
+                    }
+
+                    $(f).html('');
+                    $(f).liveScore({
+                        title: $(f).attr('data-city'),
+                        data: data
+                    });
+                    $(f).find('.ls-header').css('background-color', $(f).attr('data-color'));
+                });
+            });
+        });
+    }
+
+    render();
+
+    setInterval(function () {
+        render();
+    }, 1000 * 60);
+});
+
+$(window).load(function() {
     var $collage = $('.Collage');
 
     renderCollage($collage)
@@ -75,8 +122,14 @@ $(window).load(function() {
 
 
     // fancybox
-    $(".fancybox").fancybox(
-    );
+    $(".fancybox").fancybox({
+        padding: 0,
+        helpers: {
+            overlay: {
+                locked: false
+            }
+        }
+    });
 });
 
 $(window).scroll(function() {

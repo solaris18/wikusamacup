@@ -526,13 +526,14 @@
 					<!-- Tab panes -->
 					<div class="tab-content">
 						<div class="tab-pane fade in active" id="jakarta">
-							<!-- <div class="schedule" data-title="futsal"></div>
-							<div class="schedule" data-title="basket"></div>
-							<div class="schedule" data-title="badminton"></div> -->
-							Coming Soon
+							<div class="schedule" data-color='#e1735e' data-city="futsal"></div>
+							<div class="schedule" data-color='#45db9b' data-city="basket"></div>
+							<div class="schedule" data-color='#8d39ad' data-city="badminton"></div>
 						</div>
 						<div class="tab-pane fade" id="malang">
-							Coming Soon
+							<div class="schedule" data-color='#e1735e' data-city="futsal"></div>
+							<div class="schedule" data-color='#45db9b' data-city="basket"></div>
+							<div class="schedule" data-color='#8d39ad' data-city="badminton"></div>
 						</div>
 					</div>
 				</div>
@@ -620,40 +621,10 @@
 		<!-- FancyBox -->
 		<script type="text/javascript" src="plugins/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 
-		<!-- app -->
-		<script type="text/javascript" src="assets/js/app.js"></script>
-
 		<!-- LiveScore -->
 		<script src="plugins/live-score/liveScore.js"></script>
 
-		<script type="text/javascript">
-			$(function () {
-				var schedulesColor = ['#e1735e', '#45db9b', '#8d39ad'];
-				var data = [{
-					players: ['XIX Family', 'Syndicate 15'],
-					time: ['18/10/13', '08.30'],
-					currentScore: [3, 2]
-				}, {
-					players: ['SPBU 17', 'Solaris 18'],
-					time: ['18/10/13', '09.00'],
-					currentScore: [0, 0]
-				}, {
-					players: ['XIX Family', 'Syndicate 15'],
-					time: ['18/10/13', '08.30'],
-					currentScore: [3, 2]
-				}, {
-					players: ['SPBU 17', 'Solaris 18'],
-					time: ['18/10/13', '09.00'],
-					currentScore: [0, 0]
-				}];
-				
-				$('#jakarta').children().each(function (i, e) {
-					$(e).liveScore({
-						title: $(e).attr('data-title'),
-						data: data
-					}).find('.ls-header').css('background-color', schedulesColor[i]);
-				});
-			});
-		</script>
+		<!-- app -->
+		<script type="text/javascript" src="assets/js/app.js"></script>
 	</body>
 </html>

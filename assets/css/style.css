@@ -353,6 +353,7 @@ footer .col-md-3 p {
 	right:0;
 	background:#272D35;
 	padding:15px;
+	z-index: 1;
 }
 .btn-menu-box span{
 	font-size: 22px;
