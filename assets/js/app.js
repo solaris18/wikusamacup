@@ -8,7 +8,7 @@ function renderCollage($collage) {
 }
 
 $(document).ready(function() {
-    var apiUrl = 'http://wikusamacup.local';
+    var apiUrl = 'http://wikucupapi.agunghari.com';
     var windowHeight = $(window).height();
     var homeShouldHeight = $('#home div:eq(0)').height();
     var resizeTimer = null;
@@ -44,7 +44,7 @@ $(document).ready(function() {
                       if ( ! result.error ) {
                         classie.addClass(form.querySelector('.simform-inner'), 'hide');
                         var messageEl = form.querySelector('.final-message');
-                        messageEl.innerHTML = 'Thank you! We\'ll be in touch.';
+                        messageEl.innerHTML = 'Thank you, please check your email.';
                         classie.addClass( messageEl, 'show' );
                       }else{
                         alert('Something problem please try again!');

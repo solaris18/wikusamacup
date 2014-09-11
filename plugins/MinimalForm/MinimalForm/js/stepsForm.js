@@ -78,12 +78,22 @@
 	stepsForm.prototype._initEvents = function() {
 		var self = this,
 			// first input
-			firstElInput = this.questions[ this.current ].querySelector( 'input' ),
+			firstElInput = this.questions[ this.current ].querySelector( 'input'),
 			// focus
 			onFocusStartFn = function() {
 				firstElInput.removeEventListener( 'focus', onFocusStartFn );
 				classie.addClass( self.ctrlNext, 'show' );
 			};
+
+			if ( ! firstElInput ) {
+				// first input
+				firstElInput = this.questions[ this.current ].querySelector( 'select'),
+				// focus
+				onFocusStartFn = function() {
+					firstElInput.removeEventListener( 'focus', onFocusStartFn );
+					classie.addClass( self.ctrlNext, 'show' );
+				};
+			}; 
 
 		// show the next question control first time the input gets focused
 		firstElInput.addEventListener( 'focus', onFocusStartFn );
@@ -102,6 +112,19 @@
 				ev.preventDefault();
 				self._nextQuestion();
 			}
+		} );
+
+		// change select will jump to next question
+		document.addEventListener( 'change', function( ev ) {
+			var inputType = ev.srcElement.nodeName;
+			// console.log(ev.srcElement.nodeName);
+			// alert(inputType);
+			// enter
+			if( inputType === 'SELECT' ) {
+				ev.preventDefault();
+				self._nextQuestion();
+			}
+
 		} );
 
 		// disable tab
@@ -200,7 +223,10 @@
 	// the validation function
 	stepsForm.prototype._validade = function() {
 		// current question´s input
-		var input = this.questions[ this.current ].querySelector( 'input' ).value;
+		var input = this.questions[ this.current ].querySelector( 'input' );
+		input = ( input ) ? input : this.questions[ this.current ].querySelector( 'select' );
+		var value = input.value;
+
 		if( input === '' ) {
 			this._showError( 'EMPTYSTR' );
 			return false;
@@ -228,7 +254,7 @@
 	// clears/hides the current error message
 	stepsForm.prototype._clearError = function() {
 		classie.removeClass( this.error, 'show' );
-	}
+	} 	
 
 	// add to global namespace
 	window.stepsForm = stepsForm;
