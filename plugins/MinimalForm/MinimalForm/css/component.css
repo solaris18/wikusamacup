@@ -98,7 +98,8 @@
 }
 
 /* Input field */
-.questions input {
+.questions input,
+.questions select {
 	display: block;
 	margin: 0.3em 0 0 0;
 	padding: 0.5em 1em 0.5em 0.7em;
@@ -113,12 +114,21 @@
 	transition: opacity 0.3s;
 }
 
+.questions select{
+	width: calc( 100% - 1em );
+}
+.questions select option{
+	color: #000;
+}
+
 .questions .current input,
+.questions .current select,
 .no-js .questions input {
 	opacity: 1;
 }
 
 .questions input:focus,
+.questions select:focus,
 .simform button:focus {
 	outline: none;
 }
