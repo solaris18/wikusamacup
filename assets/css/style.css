@@ -208,7 +208,8 @@ ul.filter.nav-tabs li a:hover{
 }
 
 .tab-content .schedule {
-	width: 365px; 
+	float: left;
+	width: 365px;
 	height: 435px;
 	display: inline-block;
 	margin: 0px 5px 15px;

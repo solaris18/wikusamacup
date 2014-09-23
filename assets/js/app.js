@@ -1,3 +1,6 @@
+// Declaration variable
+var apiUrl = 'http://stagingwikucupapi.agunghari.com';
+
 function renderCollage($collage) {
     $collage.removeWhitespace().collagePlus({
         'fadeSpeed' : 2000,
@@ -8,7 +11,6 @@ function renderCollage($collage) {
 }
 
 $(document).ready(function() {
-    var apiUrl = 'http://wikucupapi.agunghari.com';
     var windowHeight = $(window).height();
     var homeShouldHeight = $('#home div:eq(0)').height();
     var resizeTimer = null;
@@ -17,7 +19,7 @@ $(document).ready(function() {
     $('.btn-menu-box').hide()
     $('.bg-home').css('height', windowHeight);
     $('#home').css({
-        'height' : windowHeight, 
+        'height' : windowHeight,
         'padding-top' : (windowHeight - homeShouldHeight) / 2
     });
 
@@ -58,7 +60,7 @@ $(document).ready(function() {
 
     $(window).bind('resize', function() {
         $collage.find('.Image_Wrapper').css("opacity", 0);
-        
+
         if (resizeTimer) clearTimeout(resizeTimer);
 
         resizeTimer = setTimeout(function() {
@@ -71,7 +73,7 @@ $(window).load(function() {
     function render() {
         $('#schedule .tab-content').children().each(function (i, e) {
             $(e).children().each(function (j, f) {
-                var url = 'http://wikucupapi.agunghari.com/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
+                var url = apiUrl + '/schedule/' + $(e).attr('id') + '/' + $(f).attr('data-city');
 
                 $.get(url, function(res) {
                     var key, isError, data;
