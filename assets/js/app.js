@@ -117,6 +117,7 @@ $(window).load(function() {
           if ( res.player ) {
             $('#team-a').html( res.player[0] + '<span class="text-xxlarge">' + res.currentScore[0] + '</span>');
             $('#team-b').html( res.player[1] + '<span class="text-xxlarge">' + res.currentScore[1] + '</span>');
+            $('#live-date').html( res.time[0] );
             $('#live-time').html( res.time[1] );
             if ( 'malang' == liveCity ) {
               $('#live-place').html( 'CHAMPION MATOS' );
