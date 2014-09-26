@@ -1,5 +1,5 @@
 // Declaration variable
-var apiUrl = 'http://wikusamacup.local';
+var apiUrl = 'http://wikucupapi.agunghari.com';
 
 function renderCollage($collage) {
     $collage.removeWhitespace().collagePlus({
@@ -109,7 +109,7 @@ $(window).load(function() {
         });
     }
 
-    function renderLiveScore( liveCity, liveCategory ){
+    function renderLiveScore( liveCity, liveCategory, init ){
       var url = apiUrl + '/schedule/' + liveCity + '/' + liveCategory + '/live';
       $.get( url, function(res){
         var isError = res.error;
@@ -128,27 +128,28 @@ $(window).load(function() {
             }
             return true;
           }else{
-            alert('Mohon maaf pada regional ' + liveCity + ' tidak berlangsung pertandingan ' + liveCategory);
-            return false;
+            if( ! init )
+              alert('Mohon maaf pada regional ' + liveCity + ' tidak berlangsung pertandingan ' + liveCategory);
+              return false;
           }
         }
       });
     }
 
-    renderLiveScore( 'malang', 'futsal' );
+    renderLiveScore( 'malang', 'futsal', true );
     render();
 
     $( '.pickcity' ).change( function(){
       var liveCity = $(this).val();
       var liveCategory = $( '.category .active' ).attr( 'data-category' );
-      renderLiveScore( liveCity, liveCategory );
+      renderLiveScore( liveCity, liveCategory, false );
       return false;
     });
 
     $( '.category input' ).click( function(){
       var liveCity = $( '.pickcity' ).val();
       var liveCategory = $(this).attr( 'data-category' );
-      var changelivescor = renderLiveScore( liveCity, liveCategory );
+      var changelivescor = renderLiveScore( liveCity, liveCategory, false );
       if ( changelivescor ) {
         $( '.category .active' ).removeClass( 'active' );
         $( this ).addClass( 'active' );
@@ -160,7 +161,7 @@ $(window).load(function() {
       var liveCity = $( '.pickcity' ).val();
       var liveCategory = $( '.category .active' ).attr( 'data-category' );
       render();
-      renderLiveScore( liveCity, liveCategory );
+      renderLiveScore( liveCity, liveCategory, true );
     }, 1000 * 60);
 });
 

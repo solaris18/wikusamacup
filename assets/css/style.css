@@ -376,6 +376,7 @@ footer .col-md-3 p {
 	width: 32px;
 	height: 32px;
 	border: 2px solid #FFF;
+	outline:none !important;
 }
 .category input.active{
 	border: 2px solid #27ae60;
