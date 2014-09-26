@@ -222,6 +222,7 @@ ul.filter.nav-tabs li a:hover{
 	margin-top: -17px;
 }
 select.pickcity {
+	float: left;
 	background: #27ae60;
 	color: #fff;
 	border: none;
@@ -360,6 +361,33 @@ footer .col-md-3 p {
 .btn-menu-box span{
 	font-size: 22px;
 	color: #FFF;
+}
+
+.category{
+	float: right;
+	height: inherit;
+	width: 133px;
+	padding:9px 0 0 19px;
+}
+.category input{
+	border:none;
+	border-radius:15px;
+	display: inline-block;
+	width: 32px;
+	height: 32px;
+	border: 2px solid #FFF;
+}
+.category input.active{
+	border: 2px solid #27ae60;
+}
+.category .futsal{
+	background: url('../img/ico-foot.jpg') -1px 0px no-repeat;
+}
+.category .basket{
+	background: url('../img/ico-basket.jpg') -1px -1px no-repeat;
+}
+.category .batminton{
+	background: url('../img/ico-batminton.jpg') no-repeat;
 }
 
 /** jQuery liveScore hack */
