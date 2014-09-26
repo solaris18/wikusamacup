@@ -77,23 +77,23 @@
 							<div class="col-md-12 bg-yellow">
 								<div class="bg-trans-black text-xsmall pad-trbl0">
 									<select class="pickcity">
-										<option value="-1" selected>Pick city</option>
-										<option value="0">Jakarta</option>
-										<option value="1">Malang</option>
+										<option value="-1">Pick city</option>
+										<option value="jakarta">Jakarta</option>
+										<option value="malang" selected>Malang</option>
 									</select>
 									 <!-- &nbsp;Now playing : - -->
 									<div class="category">
-										<input type="button" class="futsal active"/>
-										<input type="button" class="basket"/>
-										<input type="button" class="batminton"/>
+										<input type="button" data-category="futsal" class="futsal active"/>
+										<input type="button" data-category="basket" class="basket"/>
+										<input type="button" data-category="badminton" class="batminton"/>
 									</div>
 								</div>
-								<div class="text-xlarge pad-tb80 pad-lr20">
+								<div class="text-xlarge pad-tb80 pad-lr20" id="team-a">
 									Team A<span class="text-xxlarge">0</span>
 								</div>
 							</div>
 							<div class="col-md-12 bg-blue">
-								<div class="text-xlarge pad-tb80 pad-lr20">
+								<div class="text-xlarge pad-tb80 pad-lr20" id="team-b">
 									Team B<span class="text-xxlarge">0</span>
 								</div>
 								<div class="bg-trans-black text-xsmall hidden-xs">
@@ -110,7 +110,7 @@
 									<div class="title text-medium" align="center">
 										kick off
 									</div>
-									<div class="text-xxlarge" align="center">
+									<div class="text-xxlarge" align="center" id="live-time">
 										00:00
 									</div>
 									<div class="title text-medium" align="center">
@@ -122,11 +122,11 @@
 								</div>
 							</div>
 							<div class="col-md-12 col-sm-12 col-xs-6 bg-navy">
-								<div class="pad-tb80 pad-lr20">
-									<div class="text-small" align="center" style="padding: 4px 0px 6px;">
+								<div class="pad-tb80 pad-lr20" style="padding:80px 0px !important">
+									<div class="text-small" align="center" style="padding: 4px 0px 6px;" id="live-place">
 										-
 									</div>
-									<div class="title text-small" align="center">
+									<div class="title text-small" align="center" id="live-city" >
 										(-)
 									</div>
 								</div>

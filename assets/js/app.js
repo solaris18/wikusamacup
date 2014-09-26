@@ -1,5 +1,5 @@
 // Declaration variable
-var apiUrl = 'http://stagingwikucupapi.agunghari.com';
+var apiUrl = 'http://wikusamacup.local';
 
 function renderCollage($collage) {
     $collage.removeWhitespace().collagePlus({
@@ -109,10 +109,57 @@ $(window).load(function() {
         });
     }
 
+    function renderLiveScore( liveCity, liveCategory ){
+      var url = apiUrl + '/schedule/' + liveCity + '/' + liveCategory + '/live';
+      $.get( url, function(res){
+        var isError = res.error;
+        if( ! isError ){
+          if ( res.player ) {
+            $('#team-a').html( res.player[0] + '<span class="text-xxlarge">' + res.currentScore[0] + '</span>');
+            $('#team-b').html( res.player[1] + '<span class="text-xxlarge">' + res.currentScore[1] + '</span>');
+            $('#live-time').html( res.time[1] );
+            if ( 'malang' == liveCity ) {
+              $('#live-place').html( 'CHAMPION MATOS' );
+              $('#live-city').html( 'Klojen, Malang' );
+            }else{
+              $('#live-place').html( 'GOR SENEN' );
+              $('#live-city').html( 'Jakarta Pusat' );
+            }
+            return true;
+          }else{
+            alert('Mohon maaf pada regional ' + liveCity + ' tidak berlangsung pertandingan ' + liveCategory);
+            return false;
+          }
+        }
+      });
+    }
+
+    renderLiveScore( 'malang', 'futsal' );
     render();
 
+    $( '.pickcity' ).change( function(){
+      var liveCity = $(this).val();
+      var liveCategory = $( '.category .active' ).attr( 'data-category' );
+      renderLiveScore( liveCity, liveCategory );
+      return false;
+    });
+
+    $( '.category input' ).click( function(){
+      var liveCity = $( '.pickcity' ).val();
+      var liveCategory = $(this).attr( 'data-category' );
+      var changelivescor = renderLiveScore( liveCity, liveCategory );
+      if ( changelivescor ) {
+        $( '.category .active' ).removeClass( 'active' );
+        $( this ).addClass( 'active' );
+      }
+      return false;
+    });
+
     setInterval(function () {
-        render();
+      var liveCity = $( '.pickcity' ).val();
+      var liveCategory = $( '.category .active' ).attr( 'data-category' );
+      render();
+      renderLiveScore( liveCity, liveCategory );
     }, 1000 * 60);
 });
 
