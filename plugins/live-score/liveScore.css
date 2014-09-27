@@ -1,6 +1,6 @@
 .ls-container {
   background-color: #f1f1f1; }
-  .ls-container, .ls-container:before, .ls-container:after, .ls-container *, .ls-container *:before, .ls-container *:after {
+  .ls-container, .ls-container:before, .ls-container:after, .ls-container *, .ls-container *:after {
     box-sizing: border-box;
     font-family: "Bebas"; }
   .ls-container .clear {

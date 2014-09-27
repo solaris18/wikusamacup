@@ -129,7 +129,7 @@ jQuery.fn.liveScore = function (config) {
                    ',height=' + height +
                    ',top='    + top    +
                    ',left='   + left;
-      
+
       window.open(url, 'twitter', opts);
 
       return false;
