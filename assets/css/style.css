@@ -391,6 +391,12 @@ footer .col-md-3 p {
 	background: url('../img/ico-batminton.jpg') no-repeat;
 }
 
+.box-mediapartner{
+	background-color: #ededed;padding-top:0;
+}
+.box-mediapartner h3{
+	font-family: 'Open Sans', Helvetica, Arial;font-style:italic;text-align: left;font-size: 18px;font-weight: bold;
+}
 /** jQuery liveScore hack */
 .ls-container .ls-content .ls-row .ls-row-date {
 	top: -2px !important;
