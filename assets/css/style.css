@@ -415,7 +415,7 @@ footer .col-md-3 p {
 ** ============================================================================================================================ */
 .buble{
 	height: 630px;
-	z-index :-10px;
+	z-index :-10;
 	background: url( '../img/bubble.jpg' ) no-repeat right bottom;
 }
 .oval-quotes {
@@ -423,7 +423,7 @@ footer .col-md-3 p {
   position:relative;
   width:400px;
   height:300px;
-  margin:70px auto 10px;
+  margin:60px auto 10px;
   color:#000;
   background:#FFF;
   /* css3 */
