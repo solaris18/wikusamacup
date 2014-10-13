@@ -136,7 +136,7 @@ $(window).load(function() {
       });
     }
 
-    renderLiveScore( 'malang', 'futsal', true );
+    renderLiveScore( 'jakarta', 'futsal', true );
     render();
 
     $( '.pickcity' ).change( function(){

@@ -142,6 +142,11 @@ p {
 .bg-bluesky{
 	background: #CCFFFF;
 }
+.bg-biru{
+	position: relative;
+	z-index: -10;
+	background: #309bdb;
+}
 .bg-trans-black {
 	background-color: rgba(0,0,0,.1);
 	margin: 0 -15px;
@@ -404,6 +409,123 @@ footer .col-md-3 p {
 
 .ls-container .ls-content .ls-row .ls-row-queue {
 	padding: 2px !important;
+}
+/* ============================================================================================================================
+== OVAL SPEECH BUBBLE WITH QUOTATION MARKS (more CSS3)
+** ============================================================================================================================ */
+.buble{
+	height: 630px;
+	z-index :-10px;
+	background: url( '../img/bubble.jpg' ) no-repeat right bottom;
+}
+.oval-quotes {
+	border:none;
+  position:relative;
+  width:400px;
+  height:300px;
+  margin:70px auto 10px;
+  color:#000;
+  background:#FFF;
+  /* css3 */
+  /*
+  NOTES:
+  -webkit-border-radius:Apx Bpx; // produces oval in safari 4 and chrome 4
+  -webkit-border-radius:Apx / Bpx; // produces oval in chrome 4 (again!) but not supported in safari 4
+  Not correct application of the current spec, therefore, using longhand to avoid future problems with webkit corrects this
+  */
+  -webkit-border-top-left-radius:400px 300px;
+  -webkit-border-top-right-radius:400px 300px;
+  -webkit-border-bottom-right-radius:400px 300px;
+  -webkit-border-bottom-left-radius:400px 300px;
+  -moz-border-radius:400px / 300px;
+  border-radius:400px / 300px;
+}
+
+/* creates opening quotation mark */
+.oval-quotes:before {
+  content:"\201C";
+  position:absolute;
+  z-index:1;
+  top:20px;
+  left:20px;
+  font:100px/1 Georgia, serif;
+	font-weight:bolder;
+  color:#bcbfbf;
+}
+
+.oval-quotes p {
+	width:325px;
+	height:250px;
+	padding:50px 0 0;
+	margin:0 auto;
+	text-align:center;
+	font-size:22px;
+	color:#333333;
+}
+
+.oval-quotes p .author {
+	font-weight:bold;
+}
+
+.oval-quotes p .grade {
+	font-weight: bold;
+	font-size: 14px;
+	color: #3ad89b;
+}
+
+/* creates smaller curve */
+.oval-quotes p:before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  bottom:-93px;
+  right:8%;
+  width:340px; /* wider than necessary to make it look a bit better in IE8 */
+  height:171px;
+  background:#309bdb; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:130px 168px;
+  -moz-border-radius-bottomright:130px 168px;
+  border-bottom-right-radius:130px 168px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(-30px, -2px) rotate(-5deg );
+  -moz-transform:translate(-30px, -2px) rotate(-5deg );
+  -ms-transform:translate(-30px, -2px) rotate(-5deg );
+  -o-transform:translate(-30px, -2px) rotate(-5deg );
+  transform:translate(-30px, -2px) rotate(-5deg );
+}
+
+/* creates larger curve */
+.oval-quotes p:after {
+  content:"";
+  position:absolute;
+  z-index:-2;
+  bottom:-39px;
+  right:-8%;
+  height:155px;
+  /* border-right:200px solid #FFF; */
+  background:#FFF; /* need this for webkit - bug in handling of border-radius */
+  /* css3 */
+  -webkit-border-bottom-right-radius:429px 395px;
+  -moz-border-radius-bottomright:429px 395px;
+  border-bottom-right-radius:429px 395px;
+  /* using translate to avoid undesired appearance in CSS2.1-capabable but CSS3-incapable browsers */
+  -webkit-transform:translate(0, -2px) rotate( -19deg );
+  -moz-transform:translate(0, -2px) rotate( -19deg );
+  -ms-transform:translate(0, -2px) rotate( -19deg );
+  -o-transform:translate(0, -2px) rotate( -19deg );
+  transform:translate(0, -2px) rotate( -19deg );
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:400px;
+}
+
+.oval-quotes + p {
+  position:relative; /* part of the IE8 width compromise */
+  width:150px;
+  margin:0 0 2em;
+  font-size:18px;
+  font-weight:bold;
 }
 
 
