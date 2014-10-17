@@ -1,5 +1,5 @@
 // Declaration variable
-var apiUrl = 'wikucupapi.agunghari.com';
+var apiUrl = 'http://wikucupapi.agunghari.com';
 
 function renderCollage($collage) {
     $collage.removeWhitespace().collagePlus({
