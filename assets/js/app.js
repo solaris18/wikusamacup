@@ -148,10 +148,10 @@ $(window).load(function() {
             var classHtml = ( index == 0 ) ? 'item active' : 'item';
             $inner = jQuery('<p />').html( value.comment + '<br><br>' );
 
-            $author = jQuery('<span />').addClass( 'author' ).html( '~ ' + value.name );
+            $author = jQuery('<span />').addClass( 'author' ).html( '~ ' + value.name + '.');
             $author.appendTo( $inner );
 
-            $grade = jQuery('<span />').addClass( 'grade' ).html( '~ ' + value.generation );
+            $grade = jQuery('<span />').addClass( 'grade' ).html( ' | ' + value.generation );
             $grade.appendTo( $inner );
 
             ret = jQuery('<div />').addClass(classHtml).html( $inner );
