@@ -453,28 +453,31 @@ footer .col-md-3 p {
   color:#bcbfbf;
 }
 
-.oval-quotes p {
+.oval-quotes .wrap {
 	width:325px;
 	height:250px;
 	padding:50px 0 0;
 	margin:0 auto;
-	text-align:center;
+}
+.oval-quotes .wrap p{
+	text-align: center;
+	font-size: 22px;
+	color: #333333;
+}
+.oval-quotes .wrap .author {
+	font-weight:bold;
 	font-size:22px;
 	color:#333333;
 }
 
-.oval-quotes p .author {
-	font-weight:bold;
-}
-
-.oval-quotes p .grade {
+.oval-quotes .wrap .grade {
 	font-weight: bold;
 	font-size: 14px;
 	color: #3ad89b;
 }
 
 /* creates smaller curve */
-.oval-quotes p:before {
+.oval-quotes .wrap:before {
   content:"";
   position:absolute;
   z-index:-1;
@@ -496,7 +499,7 @@ footer .col-md-3 p {
 }
 
 /* creates larger curve */
-.oval-quotes p:after {
+.oval-quotes .wrap:after {
   content:"";
   position:absolute;
   z-index:-2;
@@ -520,7 +523,7 @@ footer .col-md-3 p {
   width:400px;
 }
 
-.oval-quotes + p {
+.oval-quotes + .wrap {
   position:relative; /* part of the IE8 width compromise */
   width:150px;
   margin:0 0 2em;
