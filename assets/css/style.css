@@ -410,12 +410,32 @@ footer .col-md-3 p {
 .ls-container .ls-content .ls-row .ls-row-queue {
 	padding: 2px !important;
 }
+.carousel-control{
+	color: #09F;
+	left: -45px;
+	font-size: 30px;
+	background: none !important;
+}
+.carousel-control:hover{
+	color: #09F;
+}
+.carousel-control.right{
+	right: -45px;
+}
+.carousel-control .fa{
+	top: 50%;
+	position: absolute;
+	display: inline-block;
+}
+.carousel-control .fa:hover{
+	color: #428bca;
+}
 /* ============================================================================================================================
 == OVAL SPEECH BUBBLE WITH QUOTATION MARKS (more CSS3)
 ** ============================================================================================================================ */
 .buble{
 	height: 630px;
-	z-index :-10;
+	z-index :0;
 	background: url( '../img/bubble.jpg' ) no-repeat right bottom;
 }
 .oval-quotes {
