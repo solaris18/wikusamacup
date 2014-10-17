@@ -1,5 +1,5 @@
 // Declaration variable
-var apiUrl = 'http://wikucupapi.agunghari.com';
+var apiUrl = 'wikucupapi.agunghari.com';
 
 function renderCollage($collage) {
     $collage.removeWhitespace().collagePlus({
@@ -136,8 +136,35 @@ $(window).load(function() {
       });
     }
 
+    function renderComment(){
+      var url = apiUrl + '/comment';
+      $.get( url, function(res){
+        var isError = res.error;
+        var data = res.data;
+        if( ! isError ){
+          $.each(data, function( index, value ) {
+
+            var ret, $inner, $author, $grade;
+            var classHtml = ( index == 0 ) ? 'item active' : 'item';
+            $inner = jQuery('<p />').html( value.comment + '<br><br>' );
+
+            $author = jQuery('<span />').addClass( 'author' ).html( '~ ' + value.name );
+            $author.appendTo( $inner );
+
+            $grade = jQuery('<span />').addClass( 'grade' ).html( '~ ' + value.generation );
+            $grade.appendTo( $inner );
+
+            ret = jQuery('<div />').addClass(classHtml).html( $inner );
+
+            ret.appendTo( '.carousel-inner' );
+          });
+        }
+      });
+    }
+
     renderLiveScore( 'jakarta', 'futsal', true );
     render();
+    renderComment();
 
     $( '.pickcity' ).change( function(){
       var liveCity = $(this).val();
