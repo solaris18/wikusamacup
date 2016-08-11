@@ -86,7 +86,7 @@ jQuery.fn.liveScore = function (config) {
       $twitter.appendTo($row);
       $twitter.attr('data-text', (function () {
         var d = config.data[i];
-        var text = '#wikucup2014 #{what} #{city} Match: ' + d.players[0] + ' vs. ' + d.players[1] + ' | ';
+        var text = '#wikucup2016 #{what} #{city} Match: ' + d.players[0] + ' vs. ' + d.players[1] + ' | ';
         text = text + 'Current score: ' + d.currentScore[0] + '-' + d.currentScore[1];
 
         return text;
