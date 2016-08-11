@@ -120,11 +120,11 @@ $(window).load(function() {
             $('#live-date').html( res.time[0] );
             $('#live-time').html( res.time[1] );
             if ( 'malang' == liveCity ) {
-              $('#live-place').html( 'CHAMPION MATOS' );
-              $('#live-city').html( 'Klojen, Malang' );
+              $('#live-place').html( 'GOR Ken Arok' );
+              $('#live-city').html( 'Kedungkandang, Malang' );
             }else{
-              $('#live-place').html( 'GOR SENEN' );
-              $('#live-city').html( 'Jakarta Pusat' );
+              $('#live-place').html( 'GOR Bulungan' );
+              $('#live-city').html( 'Jakarta - Indonesia' );
             }
             return true;
           }else{
