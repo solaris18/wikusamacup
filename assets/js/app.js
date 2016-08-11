@@ -162,7 +162,7 @@ $(window).load(function() {
       });
     }
 
-    renderLiveScore( 'jakarta', 'futsal', true );
+    renderLiveScore( 'malang', 'futsal', true );
     render();
     renderComment();
 
