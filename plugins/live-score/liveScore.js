@@ -53,7 +53,7 @@ jQuery.fn.liveScore = function (config) {
       $labelQueue = jQuery('<div />');
       $labelQueue.addClass('ls-row-queue');
       $labelQueue.appendTo($row);
-      $labelQueue.html('F' + (i + 1));
+      $labelQueue.html('B' + (i + 1));
 
       $match = jQuery('<div />');
       $match.addClass('ls-row-match')
